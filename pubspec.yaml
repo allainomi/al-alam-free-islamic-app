@@ -1,3 +1,4 @@
+cat > pubspec.yaml << 'EOF'
 name: online_mufti
 description: Online Mufti App
 publish_to: 'none'
@@ -26,3 +27,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+EOF

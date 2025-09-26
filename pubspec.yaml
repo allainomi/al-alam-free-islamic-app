@@ -1,11 +1,10 @@
-cat > pubspec.yaml << 'EOF'
 name: online_mufti
-description: Online Mufti App
-publish_to: 'none'
+description: "Online Mufti App"
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: '^3.8.0'
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -27,4 +26,3 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
-EOF

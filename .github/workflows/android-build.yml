@@ -1,10 +1,7 @@
-name: Flutter Build APK
+name: Build Flutter APK
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
     branches:
       - main
 
@@ -13,28 +10,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout source
         uses: actions/checkout@v3
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 'stable'
+          flutter-version: '3.32.6'
+          channel: 'stable'
 
-      - name: Flutter Pub Get
+      - name: Install dependencies
         run: flutter pub get
 
-      - name: Build Debug APK
-        run: flutter build apk --debug
+      - name: Build APK
+        run: flutter build apk --release
 
-      - name: Build Release APK
-        run: |
-          mkdir -p android/keystore
-          echo "PLACEHOLDER_FOR_YOUR_BASE64_KEYSTORE" | base64 --decode > android/keystore/keystore.jks
-          flutter build apk --release --no-shrink
-
-      - name: Upload APKs
-        uses: actions/upload-artifact@v4
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
         with:
-          name: apks
-          path: build/app/outputs/flutter-apk/
+          name: release-apk
+          path: build/app/outputs/flutter-apk/app-release.apk

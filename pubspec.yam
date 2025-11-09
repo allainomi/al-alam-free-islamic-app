@@ -1,6 +1,5 @@
 name: al_alam_free_islamic_app
-description: Free Islamic App with Quran, Prayer Times, Azkar, Hadith - Made with Flutter
-
+description: Free Islamic App with Quran, Prayer Times, Azkar, Hadith
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -10,15 +9,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  quran: ^1.1.0  # Quran text & audio
-  adhan: ^3.0.0  # Prayer times
-  hijri_date_time: ^0.1.6  # Hijri date
-  geolocator: ^10.1.0  # Location
-  audioplayers: ^6.0.0  # Audio
-  intl: ^0.19.0  # Date format
+  quran: ^1.1.0
+  adhan: ^3.0.0
+  hijri_date_time: ^0.1.6
+  geolocator: ^10.1.0
+  audioplayers: ^6.0.0
+  intl: ^0.19.0
 
 flutter:
   uses-material-design: true
   assets:
-    - assets/quran/
     - assets/audio/
